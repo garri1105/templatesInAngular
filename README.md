@@ -1,6 +1,7 @@
 # TemplatesInAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1. 
+For live interaction with the website visit: http://templatesinangular.s3-website-us-east-1.amazonaws.com/
 
 ## Development server
 
