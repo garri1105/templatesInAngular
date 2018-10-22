@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "label": "Informal",
+    "html": "{greeting} {firstName}, and welcome to {company}! Room {roomNumber} is now ready you. Enjoy your stay, and let us know if you need anything"
+  },
+  {
+    "id": 2,
+    "label": "Formal",
+    "html": "{firstName} {lastName}, your reservation with {company} has been processed. Your room number is {roomNumber}. Enjoy your stay in {city}!"
+  }
+]

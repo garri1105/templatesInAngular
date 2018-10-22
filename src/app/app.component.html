@@ -1,20 +1,47 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+<h1>Kipsu Project</h1>
+<h3>Select guest</h3>
+<select id="guest-select" [(ngModel)]="selectedGuest">
+  <option *ngFor="let guest of guests" [ngValue]="guest">{{guest.firstName}}</option>
+</select>
+
+<ul *ngIf="selectedGuest">
+  <li><span>First name (firstName):</span> {{selectedGuest.firstName}}</li>
+  <li><span>Last name (lastName):</span> {{selectedGuest.lastName}}</li>
+  <li><span>Room number (roomNumber):</span> {{selectedGuest.reservation.roomNumber}}</li>
+  <li><span>Start timestamp (startTimestamp):</span> {{selectedGuest.reservation.startTimestamp}}</li>
+  <li><span>End timestamp (endTimestamp):</span> {{selectedGuest.reservation.endTimestamp}}</li>
 </ul>
 
+<h3>Select company</h3>
+<select id="company-select" [(ngModel)]="selectedCompany">
+  <option *ngFor="let company of companies" [ngValue]="company">{{company.company}}</option>
+</select>
+
+<ul *ngIf="selectedCompany">
+  <li><span>Company name (company):</span> {{selectedCompany.company}}</li>
+  <li><span>City (city):</span> {{selectedCompany.city}}</li>
+  <li><span>Timezone (timezone):</span> {{selectedCompany.timezone}}</li>
+</ul>
+
+
+<h3>Extra variables</h3>
+<ul>
+  <li>Greeting (greeting): Good morning/Good afternoon/Good evening. Based on time of day</li>
+</ul>
+
+<div id="templateSelect">
+  <div id="buttons">
+    <button class="templateBtn" *ngFor="let template of templates, let i = index"
+            (click)="selectedTemplate = template">
+      {{template.label || "Template #" + (i + 1)}}
+    </button>
+  </div>
+  <textarea *ngIf="selectedTemplate" id="templateEdit" [(ngModel)]="selectedTemplate.html"></textarea>
+  <button (click)="submit()">Submit</button>
+  <button (click)="delete(selectedTemplate)">Delete</button>
+</div>
+
+<button (click)="createTemplate()">+ Create New</button>
+
+
+<template-output [guest]="selectedGuest" [company]="selectedCompany" [template]="selectedTemplate"></template-output>

@@ -1,0 +1,19 @@
+#templateSelect {
+  display: flex;
+  flex-direction: row;
+  max-width: 600px;
+}
+
+#templateEdit {
+  flex: 1 1;
+  margin: 5px 10px;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  max-width: 200px;
+
+}
+
