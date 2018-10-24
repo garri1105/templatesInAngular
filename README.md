@@ -3,26 +3,36 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1. 
 To see the live website visit: http://templatesinangular.s3-website-us-east-1.amazonaws.com/
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project requires Angular
 
-## Code scaffolding
+# Node.js and npm
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To get Node.js, go to nodejs.org
 
-## Build
+To check Node version, run `node -v` in a terminal/console window.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+To check your npm version run `npm -v` in a terminal/console window.
 
-## Running unit tests
+# Angular CLI
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`npm install -g @angular/cli`
 
-## Running end-to-end tests
+## Instructions to run locally
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Step 1: Clone this repo
+`git clone https://github.com/garri1105/templatesInAngular`
+    
+Step 2: cd into directory and install dependencies
+`cd templatesInAngular`
+`npm install`
 
-## Further help
+This can take a few minutes.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Step 3: Serve the application
+`ng serve --open`
+
+The ng serve command launches the server, watches your files, and rebuilds the app as you make changes to those files.
+
+The --open (or just -o) option automatically opens your browser to http://localhost:4200/.
